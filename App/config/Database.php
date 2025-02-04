@@ -5,9 +5,9 @@ use PDO;
 class Database {
     private static $host = "localhost";
     private static $db = "carMVC";
-    private static $username = "root";
+    private static $username = "postgres";
     private static $password = "";
-    private static $driver = "mysql";    
+    private static $driver = "pgsql";    
     private static $conn = null;        
 
     public static function getConnection() {  
@@ -22,12 +22,15 @@ class Database {
                 self::$password
             );
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully";
             return self::$conn;
         } catch (PDOException $e) {
             throw new Exception("Connection failed: " . $e->getMessage());
         }
     }
 }
+
+Database::getConnection();
 ?>
 
 
