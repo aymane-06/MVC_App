@@ -1,0 +1,17 @@
+{
+    "name": "youcode/misensituation",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Database\\": "Database/",
+            "Public\\": "Public/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aymane-06",
+            "email": "aymane.himame@gmail.Com"
+        }
+    ],
+    "require": {}
+}
