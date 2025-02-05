@@ -1,3 +1,14 @@
+<?php
+require_once 'C:/laragon/www/mvc-progi/vendor/autoload.php';
+
+
+use App\Controllers\CarController;
+use App\Models\Car;
+
+$controller = new CarController();
+$controller->AjouterCar();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,25 +35,26 @@
         <!-- Main Content -->
         <main class="flex-1 p-10">
             <h1 class="text-3xl font-bold mb-6">Add a New Car</h1>
-            <form class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
-                <div class="mb-4">
-                    <label class="block text-gray-700">Car Name</label>
-                    <input type="text" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car name">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700">Color</label>
-                    <input type="text" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car color">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700">Year</label>
-                    <input type="number" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car year">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700">Url Image</label>
-                    <input type="url" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car image url">
-                </div>
-                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Car</button>
-            </form>
+            <form action="index.php" method="POST" class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
+    <div class="mb-4">
+        <label class="block text-gray-700">Car Name</label>
+        <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car name" required>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700">Color</label>
+        <input type="text" name="color" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car color" required>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700">Year</label>
+        <input type="number" name="year" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car year" required>
+    </div>
+    <div class="mb-4">
+        <label class="block text-gray-700">Url Image</label>
+        <input type="url" name="image" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car image url" required>
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Car</button>
+</form>
+
         </main>
     </div>
 </body>

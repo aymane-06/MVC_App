@@ -19,7 +19,31 @@ class Car
         
     }
 
-    public function AjouterCar(){
+
+   
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
+    public function setYear($year)
+    {
+        $this->year = $year;
+    }
+
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl = $imageUrl;
+    }
+
+   
+
+    public function insertCar(){
         $db = Database::getConnection();
         $stmt = $db->prepare("INSERT INTO cars (name, color, year, image) VALUES (:name, :color, :year, :image)");
         return $stmt->execute([
