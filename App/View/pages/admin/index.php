@@ -45,6 +45,10 @@ $controller->AjouterCar();
         <input type="text" name="color" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car color" required>
     </div>
     <div class="mb-4">
+        <label class="block text-gray-700">Engine</label>
+        <input type="text" name="engine" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car engine" required>
+    </div>
+    <div class="mb-4">
         <label class="block text-gray-700">Year</label>
         <input type="number" name="year" class="w-full p-2 border border-gray-300 rounded mt-1" placeholder="Enter car year" required>
     </div>

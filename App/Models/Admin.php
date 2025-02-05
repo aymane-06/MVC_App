@@ -1,5 +1,5 @@
 <?php
-namespace   App\Modules;
+namespace   App\Models;
 use App\Database\Database;
 
 class Admin extends User {

@@ -1,6 +1,7 @@
 <?php
-namespace App\Modules;
+namespace App\Models;
 use App\Database\Database;
+
 class Client extends User {
 
     public function __construct($name, $email, $password)
