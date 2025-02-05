@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+require_once 'C:/laragon/www/mvc-progi/vendor/autoload.php';
 
 use App\Models\Car;
 
@@ -8,16 +9,16 @@ class CarController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = $_POST['name'] ?? '';
             $color = $_POST['color'] ?? '';
-            $year = $_POST['year'] ?? '';
+            $year = intval($_POST['year'] ?? 0);
             $imageUrl = $_POST['image'] ?? '';
 
-            if (empty($name) || empty($color) || empty($year) || empty($imageUrl)) {
-                echo "All fields are required!";
+            if (empty($name) || empty($color) || $year <= 0 || empty($imageUrl)) {
+                echo "All fields are required and valid!";
                 return;
             }
 
             // Use Model to Insert Data
-            $carModel = new Car($name, $color, intval($year), $imageUrl);
+            $carModel = new Car($name, $color, $year, $imageUrl);
             $success = $carModel->insertCar();
 
             if ($success) {
