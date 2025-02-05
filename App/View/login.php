@@ -1,10 +1,10 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-    header("location:/YouDemy/public/index.php");
+    header("location:../public/index.php");
 }
-include_once $_SERVER['DOCUMENT_ROOT'].'/YouDemy/app/views/layout/header.php';
-// session_start();
+
+
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : [];
 
 $name = $email = $password = "";
@@ -17,6 +17,7 @@ extract(isset($_SESSION['old']) ? $_SESSION['old'] : []);
 $_SESSION['old'] = null;
 $_SESSION['error'] = null;
 ?>
+<?php include_once __DIR__ . '/layouts/header.php'; ?>
 
 <section class="bg-black dark:bg-gray-900">
     <div class="flex justify-center min-h-screen">

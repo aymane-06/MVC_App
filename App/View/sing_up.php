@@ -16,6 +16,7 @@ extract(isset($_SESSION['old']) ? $_SESSION['old'] : []);
 $_SESSION['old'] = null;
 $_SESSION['error'] = null;
 ?>
+<?php include_once __DIR__ . '/layout/header.php'; ?>
 <section class="bg-black dark:bg-gray-900">
     <div class="flex justify-center min-h-screen">
         <div class="hidden bg-cover lg:block lg:w-2/5" style="background-image: url('https://images.unsplash.com/photo-1494621930069-4fd4b2e24a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80')">
